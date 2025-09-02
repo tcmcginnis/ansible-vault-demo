@@ -1,0 +1,13 @@
+- name: Example Playbook Using Ansible Vault
+  hosts: localhost
+  gather_facts: false
+  vars_files:
+    - mypass.yml
+
+  tasks:
+    - name: Print the vaulted passwords
+      ansible.builtin.debug:
+        msg:
+          - "The password is {{ my_password }}"
+          - "The NEW password is {{ new_password }}"
+
